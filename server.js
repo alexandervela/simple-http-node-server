@@ -5,7 +5,8 @@ const port = 3000;
 const requestHandler = (request, response) => {
   response.end(`Handling a request on port ${port}`)
   try {
-    fs.appendFileSync('hello-world.txt', 'Hello to this great world');
+    fs.writeFileSync('hello-world.txt', 'Hello to this great world');
+
     console.log('Success');
   } catch (err) {
     console.log(JSON.stringify(err));
